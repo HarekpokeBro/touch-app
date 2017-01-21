@@ -1,9 +1,13 @@
-function init(){
-	var touchzone=document.getElementById("touchzone");
-	touchzone.addEventListener("touchzone",touchHandler,false);
+function init() {
+	var touchzone = document.getElementById("mycanvas");
+	touchzone.addEventListener("touchstart", draw, false);
 }
+ 
+function draw() {
+	var canvas = document.getElementById('mycanvas');
 
-function touchHandler(event){
-	var coords=document.getElementById("coords");
-	coords.innerHTML = 'x: ' + event.touches[0].pageX + ', y: ' + event.touches[0].pageY;
+	if(canvas.getContext) {
+	var ctx = canvas.getContext("2d");
+	ctx.fillRect (event.touches[0].pageX, event.touches[0].pageY, 5, 5);
+	}
 }
