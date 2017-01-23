@@ -9,6 +9,9 @@ function init() {
 	touchzone.addEventListener("touchend", end, false);   
 	canvas = document.getElementById('mycanvas');
 	ctx = canvas.getContext("2d");
+	mycanvas.width = mycanvas.width;
+	ctx.fillStyle = "white";
+	ctx.fillRect(0, 0, mycanvas.width, mycanvas.height);
 }
 
 function draw(e) {
